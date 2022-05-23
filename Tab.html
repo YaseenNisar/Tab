@@ -1,0 +1,186 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="animationCounter.js"></script>
+    <style>
+        .d-none{
+            display: none;
+        }
+        #overlay-loader {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            transition: all .4s;
+            background: #135EC7;
+            width: 100%;
+            height: 100%;
+            /*z-index: 999;*/
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 3px;
+        }
+        .loader-container {
+            position: relative;
+            /*display: none;*/
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+            padding-top: 100px;
+            margin-bottom: 75px;
+        }
+        .loader-container h4 {
+            text-align: center;
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 5VW;
+            line-height: 5VW;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            margin: 0px;
+        }
+        #label-generator {
+            position: relative;
+            width: 40%;
+            margin: auto;
+            background: #fff;
+            height: 70px;
+            line-height: 0px;
+            text-align: center;
+            box-shadow: 0px 5px 9px rgb(0 0 0 / 10%);
+            margin-top: 100px;
+            margin-bottom: 25px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border-radius: 21VW;
+            transition: all .4s;
+            /*opacity: 0;*/
+        }
+        #label-generator span {
+            
+            position: relative;
+            z-index: 99;
+            font-size: 40px;
+            color: #A5A5A5;
+            letter-spacing: 2px;
+            top: 32;
+
+            text-align: center;
+            font-family: 'Inconsolata', monospace;
+            font-weight: bold;
+            /*left: 1.5VW;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+            padding-right: 15px;
+            text-transform: uppercase;*/
+        }
+        /*.loader-container > div {
+            width: 18.93VW;
+            height: 18.93VW;
+            margin: auto;
+            margin-bottom: 9.8VW;
+        }*/
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id="overlay-loader">
+
+            <div class="loader-container" id="loader-thanks">
+                <div id="l-check"></div>
+                <h4>Thanks!<br>Email confirmed.</h4>             
+            </div>
+
+            <div class="loader-container slide d-none" id="loader-clap">
+                <div id="l-clap">
+                    
+                </div>
+                <h4>It's time<br>to get excited!</h4>             
+            </div>
+
+         <div class="loader-container d-none" id="loader-wait">
+            <div id="l-wait">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h4>We're generating<br>your Reward #</h4>             
+        </div>
+
+     <div class="loader-container d-none" id="loader-ready">
+        <div class="DynDivCont1" id="l-ready"><img width="200ox" src="./shein750us.png" alt=""></div>
+        <h4>Please<br> 
+        register next.</h4>             
+    </div>
+
+
+    <div id="label-generator" class="revealed d-none">
+
+        <span id="shein750" class="d-none">shein750</span>            
+        <span id="Count" class="">20023423</span>
+    </div>
+
+
+
+
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        setTimeout(function(){
+            $('#loader-thanks').addClass('d-none')
+            $('#loader-clap').removeClass('d-none')
+                setTimeout(function(){
+                $('#loader-clap').addClass('d-none')
+                $('#loader-wait').removeClass('d-none')
+                $('#label-generator').removeClass('d-none')
+                $('#shein750').addClass('d-none')
+                $('#Count').each(function () {
+                $(this).prop('Counter',10927365).animate({
+                    Counter: $(this).text()
+                }, 
+
+                {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                $(this).text(Math.ceil(now));
+              }
+                });
+            });
+
+
+                setTimeout(function(){
+                    $('#loader-wait').addClass('d-none')
+                    $('#loader-ready').removeClass('d-none')
+                        
+                      setTimeout(function(){
+                        
+                        $('#Count').addClass('d-none')
+                        $('#shein750').removeClass('d-none')
+                   
+                      }, 100)
+            }, 2000)
+            }, 2000)
+        }, 2000);
+    })
+   
+
+</script>
+</body>
+</html>
+
+
+
